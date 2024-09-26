@@ -17,6 +17,14 @@ public class InstrumentsPage extends BasePage{
 
     @FindBy(xpath = "//div[contains(@class, 'card border')]/div[@class='ais-InfiniteHits']")
     private List <WebElement> mainProductsLIst;
+    @FindBy(xpath = "//input[@placeholder='0']")
+    private WebElement minPrice;
+    @FindBy(xpath = "//input[@placeholder='999']")
+    private WebElement maxPrice;
+    @FindBy(xpath = "//button[text()='Apply']")
+    private WebElement applyPriceButton;
+
+
 
 
     public void clickOnAddToCart(){
@@ -30,6 +38,20 @@ public class InstrumentsPage extends BasePage{
         webElementsMethods.clickOn(mainProductsLIst.stream().
                 map(element ->element.findElement(By.xpath("/descendant::div[@class='w-100']"))).
                 toList().get(0));
+    }
+
+    public void setMinPrice(String minValue) {
+        webElementsMethods.sendKeys(minPrice, minValue);
+
+    }
+
+    public void setMaxPrice(String maxValue) {
+        webElementsMethods.sendKeys(maxPrice, maxValue);
+
+    }
+
+    public void clickOnApplyButton(){
+        webElementsMethods.clickOn(applyPriceButton);
     }
 
 

@@ -1,6 +1,6 @@
 @SearchAndFilter @all
 
-Feature: Product Search and Filter
+Feature: Product Search
 
   Background:
     Given Access home page

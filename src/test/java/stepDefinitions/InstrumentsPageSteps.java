@@ -17,4 +17,19 @@ public class InstrumentsPageSteps{
 
 
 
+
+    @And("set max value {word}")
+    public void setMaxValueMaxValue(String maxValue) {
+        instrumentsPage.setMaxPrice(maxValue);
+    }
+
+    @And("set min value {word}")
+    public void setMinValueMinValue(String minValue) {
+        instrumentsPage.setMinPrice(minValue);
+    }
+
+    @And("clickOnApply")
+    public void clickonapply() {
+        instrumentsPage.clickOnApplyButton();
+    }
 }
